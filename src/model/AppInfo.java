@@ -1,8 +1,7 @@
 package model;
 
-import com.github.cliftonlabs.json_simple.*;
-import controller.AppInfoController;
-import repository.AboutAppRepository;
+import com.github.cliftonlabs.json_simple.JsonObject;
+import com.github.cliftonlabs.json_simple.Jsonable;
 
 import java.io.*;
 import java.util.ArrayList;

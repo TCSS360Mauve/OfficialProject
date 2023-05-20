@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="OfficialProject:jar" />
+    </artifacts-to-build>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8601f8e0-3e8b-4422-8383-2e8c7082147e" name="Changes" comment="added UserRepository and UserProfile.json">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserProfile.json" beforeDir="false" afterPath="$PROJECT_DIR$/UserProfile.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/UserRepository.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2P8ndFogCAhSif3qhpxekx7yFWI" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;true&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;TODO_SCOPE&quot;: &quot;All Places&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;openjdk-19&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Projects/360/QuickTest&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager" selected="Application.UserRepository">
+    <configuration name="AboutAppRepository" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="repository.AboutAppRepository" />
+      <module name="OfficialProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="repository.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AppUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="view.AppUI" />
+      <module name="OfficialProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="view.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Project" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="model.Project" />
+      <module name="OfficialProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserRepository" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="repository.UserRepository" />
+      <module name="OfficialProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="repository.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ExportTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="OfficialProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.ExportTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.UserRepository" />
+        <item itemvalue="Application.AppUI" />
+        <item itemvalue="Application.Project" />
+        <item itemvalue="JUnit.ExportTests" />
+        <item itemvalue="Application.AboutAppRepository" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8601f8e0-3e8b-4422-8383-2e8c7082147e" name="Changes" comment="" />
+      <created>1682847662205</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1682847662205</updated>
+      <workItem from="1682847664820" duration="187000" />
+      <workItem from="1682847900840" duration="142000" />
+      <workItem from="1682848113465" duration="1369000" />
+      <workItem from="1682849507923" duration="353000" />
+      <workItem from="1682889444901" duration="8925000" />
+      <workItem from="1682899320061" duration="123000" />
+      <workItem from="1683100177548" duration="11208000" />
+      <workItem from="1683146387086" duration="317000" />
+      <workItem from="1683148470089" duration="1175000" />
+      <workItem from="1683861469344" duration="3095000" />
+      <workItem from="1683864606963" duration="541000" />
+      <workItem from="1683865162261" duration="3816000" />
+      <workItem from="1683869072213" duration="1620000" />
+      <workItem from="1683870807310" duration="83000" />
+      <workItem from="1683870902327" duration="299000" />
+      <workItem from="1683871233556" duration="199000" />
+      <workItem from="1684089075935" duration="1223000" />
+      <workItem from="1684303627873" duration="3927000" />
+      <workItem from="1684308357430" duration="764000" />
+      <workItem from="1684357915249" duration="718000" />
+      <workItem from="1684385682544" duration="3396000" />
+      <workItem from="1684430487264" duration="594000" />
+      <workItem from="1684431468722" duration="236000" />
+      <workItem from="1684432137911" duration="37000" />
+      <workItem from="1684432185926" duration="100000" />
+      <workItem from="1684432296335" duration="26000" />
+      <workItem from="1684432342569" duration="109000" />
+      <workItem from="1684432466886" duration="301000" />
+      <workItem from="1684432784732" duration="291000" />
+      <workItem from="1684433097939" duration="17000" />
+      <workItem from="1684434402364" duration="504000" />
+      <workItem from="1684434922343" duration="419000" />
+      <workItem from="1684435686653" duration="2284000" />
+      <workItem from="1684438737816" duration="367000" />
+      <workItem from="1684452740479" duration="3013000" />
+      <workItem from="1684471007289" duration="689000" />
+    </task>
+    <task id="LOCAL-00001" summary="OwnerProfileForm JPanel is added to create User() profile based on user inputs. After clicking the button the current JFrame will switch to AboutScreen() JPanel.">
+      <created>1682898396284</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1682898396284</updated>
+    </task>
+    <task id="LOCAL-00002" summary="emailValidation() method is added to the OnwerProfileForm.java for email validation.">
+      <created>1683146615911</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1683146615911</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Adding AppInfo.json">
+      <created>1683869434556</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1683869434556</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Adding libs">
+      <created>1683869462954</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1683869462954</updated>
+    </task>
+    <task id="LOCAL-00005" summary="AppInfor.json which contains all the app information.">
+      <created>1683869712370</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1683869712370</updated>
+    </task>
+    <task id="LOCAL-00006" summary="nothing">
+      <created>1683871048549</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1683871048549</updated>
+    </task>
+    <task id="LOCAL-00007" summary="nothing">
+      <created>1683871159839</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1683871159839</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Test">
+      <created>1683871341224</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1683871341224</updated>
+    </task>
+    <task id="LOCAL-00009" summary="AppInforRepository now includes CurrentUser when import() and export() to Json File.&#10;Add setCurrentUser() and getCurrentUser() to AppInfoController.">
+      <created>1684307582983</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1684307582983</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Fixed Repository Import() bugs to handle null key">
+      <created>1684388500018</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1684388500018</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Fixed Repository Import() bugs to handle null key">
+      <created>1684432603346</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1684432603346</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Making many changes to Models.">
+      <created>1684437973112</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1684437973112</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Making many changes to Models.">
+      <created>1684437989056</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1684437989056</updated>
+    </task>
+    <task id="LOCAL-00014" summary="added UserRepository and UserProfile.json">
+      <created>1684455743545</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1684455743545</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="OwnerProfileForm JPanel is added to create User() profile based on user inputs. After clicking the button the current JFrame will switch to AboutScreen() JPanel." />
+    <MESSAGE value="emailValidation() method is added to the OnwerProfileForm.java for email validation." />
+    <MESSAGE value="Adding AboutAppRepository" />
+    <MESSAGE value="Adding AppInfo.json" />
+    <MESSAGE value="Adding libs" />
+    <MESSAGE value="AppInfor.json which contains all the app information." />
+    <MESSAGE value="nothing" />
+    <MESSAGE value="Test" />
+    <MESSAGE value="AppInforRepository now includes CurrentUser when import() and export() to Json File.&#10;Add setCurrentUser() and getCurrentUser() to AppInfoController." />
+    <MESSAGE value="Fixed Repository Import() bugs to handle null key" />
+    <MESSAGE value="Making many changes to Models." />
+    <MESSAGE value="added UserRepository and UserProfile.json" />
+    <option name="LAST_COMMIT_MESSAGE" value="added UserRepository and UserProfile.json" />
+  </component>
+</project>

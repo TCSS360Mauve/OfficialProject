@@ -7,7 +7,8 @@ package model;
  * @version 0.1
  */
 public class User extends Account {
-	
+
+
 	/**
 	 * Constructs a user with a name and a email.
 	 * 
@@ -16,6 +17,10 @@ public class User extends Account {
 	 */
 	public User(final String theName, final String theEmail) {
 		super(theName, theEmail);
+	}
+
+	public User(final String theName, final String theEmail, String theId) {
+		super(theName, theEmail, theId);
 	}
 	
 	/**
@@ -36,3 +41,4 @@ public class User extends Account {
 		email = theEmail;
 	}
 }
+

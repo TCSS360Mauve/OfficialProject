@@ -11,6 +11,9 @@ import model.User;
 import model.AppInfo;
 import model.Account;
 
+/**
+ * @author Riley Bennett
+ */
 public class ExportTests {
     
     User user = new User("Test User", "Test@gmail.com");

@@ -1,0 +1,33 @@
+Index: AppInfo.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{\"teamName\":\"Team Mauve\",\"teamMembers\":[{\"name\":\"Hassan Abbas\",\"email\":\"habbas91@uw.edu\"},{\"name\":\"Riley Bennett\",\"email\":\"benn3230@uw.edu\"},{\"name\":\"Thinh Le\",\"email\":\"lenguyenducthinh2003@gmail.com\"},{\"name\":\"Bairu Li\",\"email\":\"bairul@uw.edu\"},{\"name\":\"Tin H Phu\",\"email\":\"phuhutin@uw.edu\"}],\"user\":{\"name\":\"TinPhu123\",\"email\":\"TinPhu123@gmail.com\"},\"versionNumber\":0.1}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/AppInfo.json b/AppInfo.json
+--- a/AppInfo.json	(revision 4a99a7de56143919d78d511f9825db8d5a7ad477)
++++ b/AppInfo.json	(date 1684308815319)
+@@ -1,1 +1,1 @@
+-{"teamName":"Team Mauve","teamMembers":[{"name":"Hassan Abbas","email":"habbas91@uw.edu"},{"name":"Riley Bennett","email":"benn3230@uw.edu"},{"name":"Thinh Le","email":"lenguyenducthinh2003@gmail.com"},{"name":"Bairu Li","email":"bairul@uw.edu"},{"name":"Tin H Phu","email":"phuhutin@uw.edu"}],"user":{"name":"TinPhu123","email":"TinPhu123@gmail.com"},"versionNumber":0.1}
+\ No newline at end of file
++{"teamName":"Team Mauve","teamMembers":[{"name":"Hassan Abbas","email":"habbas91@uw.edu"},{"name":"Riley Bennett","email":"benn3230@uw.edu"},{"name":"Thinh Le","email":"lenguyenducthinh2003@gmail.com"},{"name":"Bairu Li","email":"bairul@uw.edu"},{"name":"Tin H Phu","email":"phuhutin@uw.edu"}],"user":{"name":"TinPhuTest","email":"TinPhuTest@gmail.com"},"versionNumber":0.1}
+\ No newline at end of file
+Index: src/repository/AboutAppRepository.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package repository;\r\n\r\nimport com.github.cliftonlabs.json_simple.JsonArray;\r\nimport com.github.cliftonlabs.json_simple.JsonException;\r\nimport com.github.cliftonlabs.json_simple.JsonObject;\r\nimport com.github.cliftonlabs.json_simple.Jsoner;\r\nimport model.Account;\r\nimport model.AppInfo;\r\nimport model.User;\r\n\r\nimport java.io.FileReader;\r\nimport java.io.FileWriter;\r\nimport java.io.IOException;\r\n\r\n/**\r\n * @author  Tin Phu\r\n * @version 0.1\r\n * AboutAppRepository reads and writes to/from AppInfo.json file\r\n * com.github.cliftonlabs.json_simple library is used to work with Json.\r\n *\r\n */\r\npublic class AboutAppRepository {\r\n\r\n    /**\r\n     * Path to the AppInfo.json\r\n     */\r\n     private final String FILEPATH=\"AppInfo.json\";\r\n    /**\r\n     * appInfo holds data.\r\n     */\r\n    private final AppInfo appInfo = new AppInfo();\r\n\r\n    /**\r\n     * No-arg constructor.\r\n     * which will simply importData() and populate data from json file to this.appInfo.\r\n     */\r\n    public AboutAppRepository()  {\r\n        importData();\r\n    }\r\n\r\n    /**\r\n     * Data is imported and then mapped to this.appInfo\r\n     * @Author Tin Phu\r\n     */\r\n    public void importData() {\r\n\r\n        try (FileReader fileReader = new FileReader(FILEPATH)) {\r\n            JsonArray objects = Jsoner.deserializeMany(fileReader);\r\n            JsonObject o = (JsonObject) objects.get(0);\r\n            appInfo.setVersionNumber(Double.parseDouble(o.get(\"versionNumber\").toString()));\r\n            //Mapping CurrentUser\r\n            JsonObject currentUserJObject =  (JsonObject) o.get(\"user\");\r\n            appInfo.setUser(new User(currentUserJObject.get(\"name\").toString(),currentUserJObject.get(\"email\").toString()));\r\n\r\n            JsonArray  arr = (JsonArray)o.get(\"teamMembers\");\r\n            //Mapping List of Devs information.\r\n            for(int i = 0; i < arr.size(); i++){\r\n                String currentMemberName = (String) ((JsonObject)arr.get(i)).get(\"name\");\r\n                String currentMemberEmail = (String) ((JsonObject)arr.get(i)).get(\"email\");\r\n                appInfo.addNewDeveloper(new Account(currentMemberName,currentMemberEmail ));\r\n            }\r\n        } catch (IOException | JsonException e) {\r\n            throw new RuntimeException(e);\r\n        }\r\n    }\r\n\r\n    /**\r\n     * exporting or serialize this.appInfo to AppInfor.json.\r\n     * @Author Tin Phu\r\n     */\r\n    public void exportData(){\r\n\r\n\r\n        String json = Jsoner.serialize(this.appInfo);\r\n//        json = Jsoner.prettyPrint(json);\r\n//        System.out.println(json); print out JSON to check before writing to json file.\r\n        try (FileWriter fileWriter = new FileWriter(this.FILEPATH)) {\r\n            Jsoner.serialize(this.appInfo, fileWriter);\r\n        } catch (IOException e) {\r\n            throw new RuntimeException(e);\r\n        }\r\n\r\n\r\n    }\r\n\r\n    /**\r\n     * @Author Tin Phu\r\n     * @return\r\n     */\r\n    public AppInfo getAppInfo() {\r\n        return appInfo;\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/repository/AboutAppRepository.java b/src/repository/AboutAppRepository.java
+--- a/src/repository/AboutAppRepository.java	(revision 4a99a7de56143919d78d511f9825db8d5a7ad477)
++++ b/src/repository/AboutAppRepository.java	(date 1684308771514)
+@@ -46,6 +46,7 @@
+ 
+         try (FileReader fileReader = new FileReader(FILEPATH)) {
+             JsonArray objects = Jsoner.deserializeMany(fileReader);
++            //System.out.println(objects.toString());
+             JsonObject o = (JsonObject) objects.get(0);
+             appInfo.setVersionNumber(Double.parseDouble(o.get("versionNumber").toString()));
+             //Mapping CurrentUser
