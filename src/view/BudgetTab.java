@@ -538,6 +538,10 @@ public class BudgetTab extends JPanel {
                             DocumentController.addDocument(newDoc);
                             myDoc.put(newDoc.id(), newDoc);
                             dialog.setVisible(false);
+
+                            theTotalCost += myDoc.get(newDoc.id()).getTotalCost().doubleValue() ;
+
+                            totalLabel.setText("CurrentCost:$" + theTotalCost);
                             updateTable();
                         } catch (IOException ex) {
                             JOptionPane.showMessageDialog(BudgetTab.this, "Something went wrong! The File could not be coppied");

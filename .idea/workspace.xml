@@ -10,9 +10,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8601f8e0-3e8b-4422-8383-2e8c7082147e" name="Changes" comment="added UserRepository and UserProfile.json">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_5_17_2023_9_58_PM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_5_17_2023_9_58_PM__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppInfo.json" beforeDir="false" afterPath="$PROJECT_DIR$/AppInfo.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DocumentList.json" beforeDir="false" afterPath="$PROJECT_DIR$/DocumentList.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectList.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectList.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserProfile.json" beforeDir="false" afterPath="$PROJECT_DIR$/UserProfile.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/BudgetTab.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/BudgetTab.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -59,7 +61,7 @@
     "TODO_SCOPE": "All Places",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "openjdk-19",
-    "last_opened_file_path": "C:/Users/onme7/IdeaProjects/OfficialProject",
+    "last_opened_file_path": "C:/Users/onme7/OfficialProject",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
