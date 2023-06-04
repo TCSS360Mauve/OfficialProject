@@ -251,6 +251,12 @@ public class HomeScreen extends JPanel {
                 AppUI.toggleFileMenu(false);
             }
         }));
+
+        // in betweens
+        setBackground(new Color(224, 176, 255));
+        // top
+        topPanel.setBackground(new Color(224, 176, 255));
+        buttonPanel.setBackground(new Color(224, 176, 255));
     }
 
     /**
