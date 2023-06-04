@@ -24,6 +24,9 @@ public class AppUI {
 
     /** Constant for the scale of the frame.*/
     private static final int SCALE = 3;
+
+    /** Menu item for file for when the user is logged in.*/
+    private static final JMenu fileMenu = new JMenu("File");
     private JFrame frame;
     /**
      * Panel containing every JPanel of the app.
@@ -62,9 +65,6 @@ public class AppUI {
 
         // Create the menu bar
         JMenuBar menuBar = new JMenuBar();
-
-        // Create the "File" menu
-        JMenu fileMenu = new JMenu("File");
         
         //Adding Import Menu Item
         JMenuItem importMenuItem = new JMenuItem("Import");
@@ -133,6 +133,7 @@ public class AppUI {
         // Add menus to the menu bar
         menuBar.add(fileMenu);
         menuBar.add(aboutMenu);
+        toggleFileMenu(false);
 
         // Set the menu bar to the frame
         frame.setJMenuBar(menuBar);
@@ -152,11 +153,17 @@ public class AppUI {
         // Show the frame
         frame.setVisible(true);
 
-        if(AppInfoController.getCurrentUser() != null){
+        if (AppInfoController.getCurrentUser() != null) {
             cardPanel.add(new HomeScreen(AppInfoController.getCurrentUser(), cardPanel, cardLayout), "HomeScreen");
 //            System.out.println(AppInfoController.getCurrentUser().getId());
             cardLayout.show(cardPanel, "HomeScreen");
+            toggleFileMenu(true);
         }
+    }
+
+    public static void toggleFileMenu(final boolean toggle) {
+        fileMenu.setVisible(toggle);
+        fileMenu.setEnabled(toggle);
     }
 
     public static void main(String[] args) {

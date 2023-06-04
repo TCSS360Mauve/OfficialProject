@@ -96,6 +96,7 @@ public class ChangeCurrentUserData extends JPanel {
 				AppInfoController.changeUserName(newData);
 				// changes the name in the menu bar
 				theMenu.setText(newData);
+				HomeScreen.updateWelcome();
 			} else {
 				// Show error if user input not a valid email format
 				if (!CreateProfile.emailValidation(newData)){

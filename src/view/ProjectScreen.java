@@ -176,11 +176,13 @@ public class ProjectScreen extends JPanel {
         // Adding exit button to go back to home screen
         homeExitButton.addActionListener(theE -> {
             cardLayout.show(cardPanel, "HomeScreen");
+            HomeScreen.updateWelcome();
         });
         //Adding exit button to go back to the login screen
         exitButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 cardLayout.show(cardPanel, "LogInScreen");
+                AppUI.toggleFileMenu(false);
             }
         });
         // Add button to change username

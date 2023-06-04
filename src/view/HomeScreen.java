@@ -37,6 +37,11 @@ public class HomeScreen extends JPanel {
     private DefaultTableModel projectTableModel;
 
     /**
+     * Label for the welcome.
+     */
+    private static JLabel welcomeLabel;
+
+    /**
      * The table to display the projects in.
      */
     private JTable projectTable;
@@ -147,7 +152,7 @@ public class HomeScreen extends JPanel {
         buttonPanel.add(deleteButton);
         buttonPanel.add(logoutButton);
 
-        JLabel welcomeLabel = new JLabel("Welcome Back, " + user.getName()+"!");
+        welcomeLabel = new JLabel("Welcome Back, " + user.getName()+"!");
         welcomeLabel.setFont(new Font("Arial", Font.BOLD, 24));
 
         // Top panel for welcome label and buttons
@@ -243,6 +248,7 @@ public class HomeScreen extends JPanel {
 
                 cardLayout.show(cardPanel, "LogInScreen");      // Move to log-in screen
                 AppInfoController.logout();                          // Log out user
+                AppUI.toggleFileMenu(false);
             }
         }));
     }
@@ -296,5 +302,13 @@ public class HomeScreen extends JPanel {
 
         public void removeCellEditorListener(CellEditorListener l) {
         }
+    }
+
+    /**
+     * Updates welcome lable whenever username is changed.
+     * @author Bairu Li
+     */
+    public static void updateWelcome() {
+        welcomeLabel.setText("Welcome Back, " + AppInfoController.getCurrentUser().getName()+"!");
     }
 }

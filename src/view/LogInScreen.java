@@ -36,7 +36,7 @@ public class LogInScreen extends JPanel {
      * @param cardPanel The cardpanel to be used.
      * @param cardLayout The cardlayout to be used.
      */
-    public LogInScreen(JPanel cardPanel, CardLayout  cardLayout  ){
+    public LogInScreen(JPanel cardPanel, CardLayout  cardLayout){
 
         setLayout(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
@@ -95,7 +95,7 @@ public class LogInScreen extends JPanel {
                 //Switch Trigger Here
 
                 cardLayout.show(cardPanel, "HomeScreen");
-
+                AppUI.toggleFileMenu(true);
             }
         };
 
