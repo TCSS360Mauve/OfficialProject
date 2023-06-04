@@ -31,11 +31,14 @@ public class CreateProfile extends JPanel {
      * Creates the panel to create a profile.
      * @author Riley Bennett
      * @author Tin Phu
+     * @author Bairu Li
      * @param cardPanel The cardpanel to be used
      * @param cardLayout The cardlayout to be used
      */
-    public CreateProfile(JPanel cardPanel, CardLayout  cardLayout  ){
+    public CreateProfile(JPanel cardPanel, CardLayout cardLayout) {
         setLayout(new GridBagLayout());
+        JPanel center = new JPanel(new GridBagLayout());
+
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.insets = new Insets(10, 10, 10, 10); // Set padding
 
@@ -104,44 +107,47 @@ public class CreateProfile extends JPanel {
         gbc.gridy = 0;
         gbc.gridwidth = 2;
         gbc.anchor = GridBagConstraints.CENTER;
-        add(titleLabel, gbc);
+        center.add(titleLabel, gbc);
 
         gbc.gridy = 1;
         gbc.gridwidth = 1;
         gbc.anchor = GridBagConstraints.LINE_END;
-        add(usernameLabel, gbc);
+        center.add(usernameLabel, gbc);
 
         gbc.gridx = 1;
         gbc.anchor = GridBagConstraints.LINE_START;
-        add(nameField, gbc);
+        center.add(nameField, gbc);
 
         gbc.gridx = 0;
         gbc.gridy = 2;
         gbc.anchor = GridBagConstraints.LINE_END;
-        add(passwordLabel, gbc);
+        center.add(passwordLabel, gbc);
 
         gbc.gridx = 1;
         gbc.anchor = GridBagConstraints.LINE_START;
-        add(emailArea, gbc);
+        center.add(emailArea, gbc);
 
         gbc.gridx = 0;
         gbc.gridy = 3;
         gbc.gridwidth = 2;
         gbc.anchor = GridBagConstraints.CENTER;
-        add(createButton, gbc);
+        center.add(createButton, gbc);
 
         gbc.gridx = 0;
         gbc.gridy = 4;
         gbc.gridwidth = 2;
         gbc.anchor = GridBagConstraints.CENTER;
-        add(newUserLabel, gbc);
+        center.add(newUserLabel, gbc);
 
         gbc.gridy = 5;
-        add(logInButton, gbc);
+        center.add(logInButton, gbc);
 
+        // center size
+        center.setPreferredSize(new Dimension(400,500));
+        center.setBackground(Color.white);
 
-
-
+        setBackground(new Color(224, 176, 255));
+        add(center);
     }
 
     /**

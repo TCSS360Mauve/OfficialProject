@@ -89,6 +89,8 @@ public class ChangeCurrentUserData extends JPanel {
                 JOptionPane.showMessageDialog(ChangeCurrentUserData.this, "Empty Text", "Error", JOptionPane.ERROR_MESSAGE);
                 return;
             }
+
+
             
 			if (thePopupType.equals(USERNAME)) {
 				// changes the username 
@@ -96,6 +98,7 @@ public class ChangeCurrentUserData extends JPanel {
 				AppInfoController.changeUserName(newData);
 				// changes the name in the menu bar
 				theMenu.setText(newData);
+				HomeScreen.updateWelcome();
 			} else {
 				// Show error if user input not a valid email format
 				if (!CreateProfile.emailValidation(newData)){

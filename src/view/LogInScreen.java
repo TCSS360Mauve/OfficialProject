@@ -5,6 +5,7 @@ import controller.UserController;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.net.http.HttpResponse;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.swing.*;
@@ -36,9 +37,10 @@ public class LogInScreen extends JPanel {
      * @param cardPanel The cardpanel to be used.
      * @param cardLayout The cardlayout to be used.
      */
-    public LogInScreen(JPanel cardPanel, CardLayout  cardLayout  ){
-
+    public LogInScreen(JPanel cardPanel, CardLayout  cardLayout) {
         setLayout(new GridBagLayout());
+
+        JPanel center = new JPanel(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.insets = new Insets(10, 10, 10, 10); // Set padding
 
@@ -95,7 +97,7 @@ public class LogInScreen extends JPanel {
                 //Switch Trigger Here
 
                 cardLayout.show(cardPanel, "HomeScreen");
-
+                AppUI.toggleFileMenu(true);
             }
         };
 
@@ -124,40 +126,47 @@ public class LogInScreen extends JPanel {
         gbc.gridy = 0;
         gbc.gridwidth = 2;
         gbc.anchor = GridBagConstraints.CENTER;
-        add(titleLabel, gbc);
+        center.add(titleLabel, gbc);
 
         gbc.gridy = 1;
         gbc.gridwidth = 1;
         gbc.anchor = GridBagConstraints.LINE_END;
-        add(usernameLabel, gbc);
+        center.add(usernameLabel, gbc);
 
         gbc.gridx = 1;
         gbc.anchor = GridBagConstraints.LINE_START;
-        add(nameField, gbc);
+        center.add(nameField, gbc);
 
         gbc.gridx = 0;
         gbc.gridy = 2;
         gbc.anchor = GridBagConstraints.LINE_END;
-        add(passwordLabel, gbc);
+        center.add(passwordLabel, gbc);
 
         gbc.gridx = 1;
         gbc.anchor = GridBagConstraints.LINE_START;
-        add(emailArea, gbc);
+        center.add(emailArea, gbc);
 
         gbc.gridx = 0;
         gbc.gridy = 3;
         gbc.gridwidth = 2;
         gbc.anchor = GridBagConstraints.CENTER;
-        add(loginButton, gbc);
+        center.add(loginButton, gbc);
 
         gbc.gridx = 0;
         gbc.gridy = 4;
         gbc.gridwidth = 2;
         gbc.anchor = GridBagConstraints.CENTER;
-        add(newUserLabel, gbc);
+        center.add(newUserLabel, gbc);
 
         gbc.gridy = 5;
-        add(createAcct, gbc);
+        center.add(createAcct, gbc);
+
+        // center size
+        center.setPreferredSize(new Dimension(400,500));
+        center.setBackground(Color.white);
+
+        setBackground(new Color(224, 176, 255));
+        add(center);
 
     }
     /**

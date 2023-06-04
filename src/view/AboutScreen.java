@@ -84,9 +84,15 @@ public class AboutScreen extends JPanel {
         str.append("</ul><html>");
         JLabel devs = new JLabel(str.toString());
         aboutInfo.add(devs, cons);
+        cons.gridy = 4;
+
+        JLabel creditLib = new JLabel("This app utilizes json-simple library, which is currently mantained by Clifton Labs");
+        Font creditLibFont = new Font(creditLib.getFont().getName(),Font.BOLD,creditLib.getFont().getSize());
+        creditLib.setFont(creditLibFont);
+        aboutInfo.add(creditLib,cons);
 
         // Back button
-        cons.gridy = 4;
+        cons.gridy = 5;
         cons.weighty = 1;
         cons.insets = new Insets(0, 0, 30, 0);
         JButton backButton = new JButton("Back");

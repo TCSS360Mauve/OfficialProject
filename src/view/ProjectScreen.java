@@ -14,12 +14,7 @@ import javax.swing.JPopupMenu;
 import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
-import java.awt.BorderLayout;
-import java.awt.CardLayout;
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.FlowLayout;
-import java.awt.Font;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
@@ -97,7 +92,8 @@ public class ProjectScreen extends JPanel {
         JButton membersButton = new JButton("Members");
         JButton addDocument = new JButton("Add Document...");
         JButton addProjectButton = new JButton("Add Project");
-        
+        JButton searchButton = new JButton("Search");
+        searchButton.setSize(10,10);
         //Search text box
         JTextField searchBar = new JTextField(16);
         //Get name of user
@@ -137,7 +133,9 @@ public class ProjectScreen extends JPanel {
         //Making the top panel (Where the search function goes)
         topLeftPanel.add(projectNameLabel);
         topCenterPanel.add(searchLabel);
+
         topCenterPanel.add(searchBar);
+        topCenterPanel.add(searchButton);
         topRightPanel.add(accountMenuBar);
         topPanel.add(topLeftPanel, BorderLayout.WEST);
         topPanel.add(topCenterPanel, BorderLayout.CENTER);
@@ -176,11 +174,13 @@ public class ProjectScreen extends JPanel {
         // Adding exit button to go back to home screen
         homeExitButton.addActionListener(theE -> {
             cardLayout.show(cardPanel, "HomeScreen");
+            HomeScreen.updateWelcome();
         });
         //Adding exit button to go back to the login screen
         exitButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 cardLayout.show(cardPanel, "LogInScreen");
+                AppUI.toggleFileMenu(false);
             }
         });
         // Add button to change username
@@ -227,6 +227,16 @@ public class ProjectScreen extends JPanel {
                     projectNameLabel.setText("Project Name: " + selectedTabTitle);
                 }
             }
+        });
+
+        searchButton.addActionListener(e->{
+            if(searchBar.getText().isEmpty()){
+                JOptionPane.showMessageDialog(this, "Empty Search Key");
+            } else {
+                new  SearchResultDialog(searchBar.getText());
+            }
+
+
         });
 
         //projectPanel.add(addProjectPanel, BorderLayout.SOUTH);
