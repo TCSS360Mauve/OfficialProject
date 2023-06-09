@@ -444,8 +444,8 @@ public class DocumentTab extends JPanel {
             fileSelectorButton.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-
-                    JFileChooser fileChooser = new JFileChooser();
+                    String desktopPath = System.getProperty("user.home") + File.separator + "Desktop";
+                    JFileChooser fileChooser = new JFileChooser(desktopPath);
                     int result = fileChooser.showOpenDialog(panel);
 
                     // Check if user chose a file

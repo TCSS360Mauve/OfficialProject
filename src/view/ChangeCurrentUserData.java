@@ -89,6 +89,8 @@ public class ChangeCurrentUserData extends JPanel {
                 JOptionPane.showMessageDialog(ChangeCurrentUserData.this, "Empty Text", "Error", JOptionPane.ERROR_MESSAGE);
                 return;
             }
+
+
             
 			if (thePopupType.equals(USERNAME)) {
 				// changes the username 

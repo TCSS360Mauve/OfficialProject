@@ -81,4 +81,8 @@ public class DocumentController {
     public static Document findDocbyID(final String theID){
         return documentRepository.findDocumentById(theID);
     }
+
+    public static HashMap<String, Document> getAllDocs(){
+        return documentRepository.getListOfDocument();
+    }
 }
