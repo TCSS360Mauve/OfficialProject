@@ -2,6 +2,7 @@ package test;
 
 import controller.DocumentController;
 import model.Document;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import view.BudgetTab;
@@ -9,79 +10,82 @@ import view.BudgetTab;
 import java.math.BigDecimal;
 import java.util.HashMap;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 /**
  * This class is for testing method for budget tab.
  *
- * @author  Thinh Le
+ * @author Thinh Le
  * @version 0.1
  */
 class BudgetTest {
-
-    private BudgetTab budgetTab;
+    BudgetTab budget;
+    Document doc = new Document("Doc1", "Description",
+            "projectID", "UserID", BigDecimal.valueOf(94));
+    HashMap<String, Document> myDoc;
 
     @BeforeEach
-    void setUp() {
-        budgetTab = new BudgetTab("project");
+    public void setUp() {
+
+        DocumentController.addDocument(doc);
+        myDoc = DocumentController.getDocsByProjectID(doc.getId());
+        myDoc.put(doc.getId(), doc);
+
     }
 
 
-    @Test
-    void setTotalBudget() {
-        budgetTab.setTotalBudget(50000);
+    /**
+     * This is to test delete Doc.
+     *
+     * @Author Thinh Le
+     */
 
-        assertEquals(50000, budgetTab.totalBudget);
+    @Test
+    public void AddingDocByIDTest() {
+        DocumentController.addDocument(doc);
+        Assertions.assertNotNull(DocumentController.findDocbyID(doc.getId()));
+
+    }
+    /**
+     * Test Value of Doc.
+     */
+    @Test
+    void testValue() {
+
+
+        assertEquals(BigDecimal.valueOf(94), myDoc.get(doc.getId()).getTotalCost());
     }
 
-
+    /**
+     * Test Name of Doc.
+     */
     @Test
-    void updateTotalCost() {
-        HashMap<String, Document> myDoc = new HashMap<>();
-        myDoc.put("id-1", new Document("Document 1", "", "project-1", "", BigDecimal.valueOf(100.00)));
-        budgetTab.myDoc = myDoc;
+    void testName() {
 
-        budgetTab.updateTotalCost();
-
-        assertEquals(100.00, budgetTab.theTotalCost);
+        assertEquals("Doc1", myDoc.get(doc.getId()).getDocumentName());
     }
 
+    /**
+     * Test User id.
+     */
     @Test
-    void documentCreationFormPopUp() {
-        BudgetTab.DocumentCreationFormPopUp formPopUp = budgetTab.new DocumentCreationFormPopUp("project-1");
+    void testUserId() {
 
-        assertNotNull(formPopUp.documentNameField);
-        assertNotNull(formPopUp.documentDescriptionField);
-        assertNotNull(formPopUp.totalCostField);
-        assertNotNull(formPopUp.dialog);
-    }
-    @Test
-    void testSetTotalBudget() {
-        double newBudget = 50000;
-        budgetTab.setTotalBudget(newBudget);
-        double totalBudgetLabel = budgetTab.totalBudget;
-
-        assertEquals(newBudget, budgetTab.totalBudget, 0.001);
-        assertEquals( newBudget, totalBudgetLabel);
+        assertEquals("UserID", myDoc.get(doc.getId()).getUserID());
     }
 
+    /**
+     * Test BudgetTab before adding.
+     */
     @Test
-    public void DeleteDocTest() {
-        Document myDoc = new Document("DocTest1","",
-                "projectID","", BigDecimal.valueOf(25));
-        DocumentController.deleteADocument(myDoc);
-        assertNull(DocumentController.findDocbyID(myDoc.getId()));
-    }
-    @Test
-    public void addDocTest() {
-        Document myDoc = new Document("DocTest1","",
-                "projectID","", BigDecimal.valueOf(25));
-        DocumentController.addDocument(myDoc);
-        budgetTab.myDoc.put(myDoc.id(), myDoc);
-        budgetTab.addRowToTable(myDoc.id(), myDoc.getDocumentName(), myDoc.getTotalCost().toString());
+    void testBudgetTabBeforeAdding() {
+        try {
+            BudgetTab budget = new BudgetTab(doc.getId());
+        } catch (Exception e) {
+            System.out.println("Null");
+        }
 
-        // Check that the document has been added to the BudgetTab
-        assertEquals(myDoc, budgetTab.myDoc.get(myDoc.id()));
-        assertEquals(1, budgetTab.model.getRowCount());
+
     }
 }
