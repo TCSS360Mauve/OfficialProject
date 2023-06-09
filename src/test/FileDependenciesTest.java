@@ -4,7 +4,6 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
-
 /**
  * Tests for File Dependency.
  * @Author Tin Phu
@@ -12,6 +11,9 @@ import java.io.File;
  */
 public class FileDependenciesTest {
     String currentPath = System.getProperty("user.dir");
+//    String currentPath = "C:\\Users\\Riley Bennett\\Documents\\VSCode\\Repos\\OfficialProject";
+    
+//    String currentPath = getClass().getProtectionDomain().getCodeSource().getLocation().getPath();
 
     /**
      * Test if AppInfo.json exists.

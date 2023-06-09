@@ -39,6 +39,7 @@ public class ProjectTest {
         //Test 1.1: find the project folder.
         String currentPath = System.getProperty("user.dir");
 
+
         File destFile = new File(currentPath +"\\projects\\"+ currentP.getId());
             if(destFile.exists()){
                 Assertions.assertTrue(true);

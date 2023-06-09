@@ -18,7 +18,7 @@ import static org.junit.jupiter.api.Assertions.*;
  * @version 0.1
  */
 class BudgetTest {
-
+ 
     private BudgetTab budgetTab;
 
     @BeforeEach
