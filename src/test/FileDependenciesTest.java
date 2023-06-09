@@ -11,9 +11,6 @@ import java.io.File;
  */
 public class FileDependenciesTest {
     String currentPath = System.getProperty("user.dir");
-//    String currentPath = "C:\\Users\\Riley Bennett\\Documents\\VSCode\\Repos\\OfficialProject";
-    
-//    String currentPath = getClass().getProtectionDomain().getCodeSource().getLocation().getPath();
 
     /**
      * Test if AppInfo.json exists.
