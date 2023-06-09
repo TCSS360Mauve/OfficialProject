@@ -29,6 +29,7 @@ public class AppInfo implements Jsonable {
 
     /**
      * Constructor to create an AppInfo object with the current user
+     * @author Hassan Abbas
      * @param user The current user of the app
      */
     public AppInfo(final User user) {
@@ -37,6 +38,7 @@ public class AppInfo implements Jsonable {
 
     /**
      * Constructor to add developer names and set the user.
+     * @author Hassan Abbas
      * @param versionNumber The version number of the app
      * @param user The current user of the app
      */
@@ -47,6 +49,8 @@ public class AppInfo implements Jsonable {
 
     /**
      * Constructor to create an AppInfo object with the version number of the app.
+     * @author Tin Phu
+     * @param versionNumber The version number of the app
      */
     public AppInfo(final double versionNumber) {
 
@@ -99,6 +103,7 @@ public class AppInfo implements Jsonable {
 
     /**
      * Adds an account to the developers list.
+     * @author Tin Phu
      * @param theAccount The account to be added
      */
     public void addNewDeveloper(final Account theAccount){
@@ -116,6 +121,7 @@ public class AppInfo implements Jsonable {
 
     /**
      * Sets the current user to the specified user.
+     * @author Tin Phu
      * @param user The current user to be set
      */
     public void setUser(final User user) {
@@ -140,6 +146,7 @@ public class AppInfo implements Jsonable {
 
     /**
      * Sets the version number of the app.
+     * @author Tin Phu
      * @param versionNumber The version number to be set to.
      */
     public void setVersionNumber(final double versionNumber) {

@@ -290,7 +290,7 @@ public class Document implements Jsonable {
 
     /**
      * Copies a file from user input to a file path destination.
-     * @Author Tin Phu
+     * @author Tin Phu
      * @param srcString File path string.
      * @return Destination file path.
      * @throws IOException
@@ -337,6 +337,7 @@ public class Document implements Jsonable {
 
     /**
      * Returns the file path of this document.
+     * @author Tin Phu
      * @return The file path of this document.
      */
     public String getFilePath() {
