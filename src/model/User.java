@@ -3,6 +3,7 @@ package model;
  * A class to store information of the user of the app.
  * 
  * @author Bairu Li
+ * @author Tin Phu
  * @version 0.3
  */
 public class User extends Account {
@@ -19,6 +20,7 @@ public class User extends Account {
 
 	/**
 	 * Constructor for data mapping.
+	 * @author Tin Phu
 	 * @param theName The name of the user.
 	 * @param theEmail The email of the user.
 	 * @param theId The id of the user.

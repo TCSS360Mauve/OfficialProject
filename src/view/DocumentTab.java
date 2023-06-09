@@ -13,6 +13,7 @@ import java.awt.event.*;
 import java.io.File;
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.EventObject;
 import java.util.HashMap;
 import java.text.DecimalFormat;
@@ -132,10 +133,12 @@ public class DocumentTab extends JPanel {
 
                     // Set cost, formatted to 2 decimal places
                     double totalCostRound;
+                    BigDecimal decimalTest = new BigDecimal(0);
                     try {
                         totalCostRound = Double.valueOf(totalCost);
                         totalCostRound = Double.valueOf(df.format(totalCostRound));
 
+                        decimalTest = new BigDecimal(totalCostRound);
                         // If cost negative, display error message
                         if (totalCostRound < 0) {
                             throw new NumberFormatException();
@@ -148,19 +151,21 @@ public class DocumentTab extends JPanel {
                         return;
                     }
 
-                    listOfDocs.get(id).setTotalCost(BigDecimal.valueOf(totalCostRound));
+                    listOfDocs.get(id).setTotalCost(decimalTest.setScale(2, RoundingMode.HALF_EVEN));
                     listOfDocs.get(id).setDocumentName(name);               // Set name
                     listOfDocs.get(id).setDocumentDescription(description); // Set Description
                     
                     
                     DocumentController.addDocument(listOfDocs.get(id));     // Add document to list of documents
+                    updateTable(id);
                 }
             }
         });
 
         // Load each document into the table
         listOfDocs.forEach((k, e)-> {
-            addRow(k, e.getDocumentName(), e.getDocumentDescription(), e.getDate().toString(), e.getTotalCost().toString());
+            addRow(k, e.getDocumentName(), e.getDocumentDescription(), e.getDate().toString(), 
+            e.getTotalCost().setScale(2, RoundingMode.HALF_EVEN).toString());
         });
 
         JPopupMenu popupMenu = new JPopupMenu();
@@ -289,7 +294,8 @@ public class DocumentTab extends JPanel {
 
         // Populate the table with the updated data from the list
         listOfDocs.forEach((k, e)->{
-            addRow(k, e.getDocumentName(), e.getDocumentDescription(), e.getDate().toString(), e.getTotalCost().toString());
+            addRow(k, e.getDocumentName(), e.getDocumentDescription(), e.getDate().toString(), 
+            e.getTotalCost().setScale(2, RoundingMode.HALF_EVEN).toString());
         });
     }
 

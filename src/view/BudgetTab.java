@@ -50,11 +50,6 @@ public class BudgetTab extends JPanel {
     private JLabel totalBudgetLabel;
 
     /**
-     * This is the text field for set budget.
-     */
-    private JTextField setBudgetField;
-
-    /**
      * Button to set the budget with.
      */
     private JButton setBudgetButton;
@@ -372,7 +367,8 @@ public class BudgetTab extends JPanel {
                 String currentPath = DocumentController.findDocbyID(currentID).getFilePath();
 
                 Document newDoc2 = new Document(currentName, currentDecription,
-                        theProjectID, "", new BigDecimal(newPrice).setScale(2, RoundingMode.CEILING),currentID,currentDate,currentPath);
+                        theProjectID, "", new BigDecimal(newPrice).setScale(2, RoundingMode.HALF_EVEN),
+                        currentID,currentDate,currentPath);
 
                 DocumentController.addDocument(newDoc2);
                 myDoc.put(currentID, newDoc2);
@@ -392,7 +388,10 @@ public class BudgetTab extends JPanel {
      *
      */
     public void addRowToTable(String id, String name, String totalCost) {
-        Object[] row = {id, name, totalCost};
+        BigDecimal temp = new BigDecimal(Double.valueOf(totalCost));
+        String formattedCost = temp.setScale(2, RoundingMode.HALF_EVEN).toString();
+
+        Object[] row = {id, name, formattedCost};
         model.addRow(row);
     }
 
@@ -410,7 +409,7 @@ public class BudgetTab extends JPanel {
             addRowToTable(k, e.getDocumentName(), df.format(e.getTotalCost()));
         });
 
-        BigDecimal pTotalCost= ProjectController.updateTotalCostByID(this.theProjectID).setScale(2, RoundingMode.CEILING);
+        BigDecimal pTotalCost= ProjectController.updateTotalCostByID(this.theProjectID).setScale(2, RoundingMode.HALF_EVEN);
         theTotalCost = Double.valueOf(pTotalCost.doubleValue());
         
         setCostLabel();
@@ -431,7 +430,8 @@ public class BudgetTab extends JPanel {
      * @author Thinh Le
      */
     public void updateTotalBudgetLabel() {
-        totalBudgetLabel.setText("Total Budget: $" + totalBudget);
+        BigDecimal temp = new BigDecimal(totalBudget);
+        totalBudgetLabel.setText("Total Budget: $" + temp.setScale(2, RoundingMode.HALF_EVEN));
     }
 
     /**
@@ -454,11 +454,16 @@ public class BudgetTab extends JPanel {
      * @author Riley Bennett
      */
     public void setCostLabel() {
+        BigDecimal temp = new BigDecimal(theTotalCost);
+
+        // If cost is over budget, set to red text
         if (theTotalCost > totalBudget) {
-            totalLabel.setText("Current Cost (Over budget!): $" + theTotalCost);
+            totalLabel.setText("Current Cost (Over budget!): $" + temp.setScale(2, RoundingMode.HALF_EVEN));
             totalLabel.setForeground(Color.RED);
+
+        // If cost less than budget, normal black text
         } else {
-            totalLabel.setText("Current Cost: $" + theTotalCost);
+            totalLabel.setText("Current Cost: $" + temp.setScale(2, RoundingMode.HALF_EVEN));
             totalLabel.setForeground(Color.BLACK);
         }
     }
@@ -513,7 +518,7 @@ public class BudgetTab extends JPanel {
             JLabel totalCostLabel = new JLabel("Total Cost:");
             totalCostField = new JTextField(10);
 
-            JLabel fileSrcStringLabel = new JLabel("(option)");
+            JLabel fileSrcStringLabel = new JLabel("(Optional)");
 
             // Set max width for file name
             Dimension d = fileSrcStringLabel.getPreferredSize();

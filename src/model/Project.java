@@ -16,6 +16,7 @@ import java.util.UUID;
  *
  * @author Thinh Le
  * @author Tin Phu
+ * @author Riley Bennett
  * @version 0.3
  */
 public class Project implements Jsonable {
