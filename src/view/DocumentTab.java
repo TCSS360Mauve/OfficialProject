@@ -133,10 +133,12 @@ public class DocumentTab extends JPanel {
 
                     // Set cost, formatted to 2 decimal places
                     double totalCostRound;
+                    BigDecimal decimalTest = new BigDecimal(0);
                     try {
                         totalCostRound = Double.valueOf(totalCost);
                         totalCostRound = Double.valueOf(df.format(totalCostRound));
 
+                        decimalTest = new BigDecimal(totalCostRound);
                         // If cost negative, display error message
                         if (totalCostRound < 0) {
                             throw new NumberFormatException();
@@ -149,12 +151,13 @@ public class DocumentTab extends JPanel {
                         return;
                     }
 
-                    listOfDocs.get(id).setTotalCost(BigDecimal.valueOf(totalCostRound));
+                    listOfDocs.get(id).setTotalCost(decimalTest.setScale(2, RoundingMode.HALF_EVEN));
                     listOfDocs.get(id).setDocumentName(name);               // Set name
                     listOfDocs.get(id).setDocumentDescription(description); // Set Description
                     
                     
                     DocumentController.addDocument(listOfDocs.get(id));     // Add document to list of documents
+                    updateTable(id);
                 }
             }
         });
